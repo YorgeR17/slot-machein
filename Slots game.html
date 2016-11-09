@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slots</title>
+</head>
+<style>
+    body{background-image: url("4.png")}
+
+    form{
+        display: inline-block;
+        position: relative;
+        margin: 4px;
+        align: center;
+        width: 6%;
+        height: 500px;
+        background-color: lightgray;
+
+    }
+
+</style>
+
+
+
+<script>
+var score;
+    function displayImage ()
+
+    {
+        var score = parseInt(document.getElementById("score").value);
+        //Every time the user spins, deduct 15 from amount; amount -= 15
+        //score.value = parseInt(score.value);
+
+        var imagesArray;
+        imagesArray = new Array (3);
+        imagesArray[0] = new Image();
+        imagesArray[0] .src = "1.png";
+        imagesArray[1] = new Image();
+        imagesArray[1] .src = "2.png";
+        imagesArray[2] = new Image();
+        imagesArray[2] .src = "3.png";
+
+        var r1 = document.getElementById("slot1");
+        var r2 = document.getElementById("slot2");
+        var r3 = document.getElementById("slot3");
+
+        var num1 = Math.floor(Math.random() * 3);
+        var num2 = Math.floor(Math.random() * 3);
+        var num3 = Math.floor(Math.random() * 3);
+        //document.getElementById (imagesArray [num]);
+
+        r1.src = imagesArray[num1].src;
+
+        //document.getElementById (imagesArray [num]);
+
+        r2.src = imagesArray[num2].src;
+
+        //document.getElementById (imagesArray [num]);
+
+        r3.src = imagesArray[num3].src;
+//alert(score.value);
+
+
+//        if((num1 == num2) && (num1 == num3) && (num2 == num3)) {
+
+          //  score += 100;
+        //}
+        //if((num1 == num2) && (num1 == num3) && (num2 == num3)) {
+
+         //   score += 80;
+       // }
+        if((num1 == num2) && (num1 == num3) && (num2 == num3)) {
+
+            score += 65;
+        }
+       // if((num1 == num2) || (num1 == num3) || (num2 == num3)) {
+        //    score += 80;
+       //}
+        if(!(num1 == num2 || num1 == num3 || num2 == num3)) {
+            score = score - 15;
+       }
+
+
+
+
+
+        document.getElementById("score").value = score;
+
+
+
+
+        return false;
+
+
+
+    }
+
+
+
+
+
+
+</script>
+<body>
+<body align="center">
+
+
+<br><br><br><h1><font size="6t" face="Verdana" color="black">
+
+    <h1>
+       <center> <p><big>THE</big> <img src="pokemon_go-1.png"width="430"height="180"> <big>SLOTS</big></p></center>
+    </h1>
+
+<!--<form name="imageForm">-->
+<table align="center" border="15" style="background: lightgray">
+    <tr>
+        <td>
+
+<img id="slot1" src="1.png"
+     width="200" height="200">  </td>
+
+        <td>
+        <img id="slot2" src="1.png"
+                width="200"height="200">
+        </td>
+
+        <td>
+            <img id="slot3" src="1.png"
+                 width="200"height="200">
+
+        </td>
+        <td>
+           <center> <input type="text" value="       CLICK TO SPIN"readonly></center>
+            <input type="image" src="Pokeball-1.gif" onclick="displayImage()" value="SPIN HERE" height="150" width="150">
+
+        </td>
+    </tr>
+
+</table>
+    <div>
+    <span>
+        <form style="width: 280px;height: 120px;border: 5px solid black"> 3 in a row Magickarps=65 points</form>
+       <form style="width: 280px;height: 120px;border: 5px solid black">3 in a row Pikachus=65 points</form>
+           <form style="width: 289px;height: 120px;border: 5px solid black"> 3 in a row Rayquazas=65 points</form>
+    </span>
+        <br>
+        <input type=text id="score" value = "0" readonly>
+   <center><audio controls autoplay>
+        <source src="Pokémon%20Theme%20Song%20-%20128K%20MP3.mp3"type="audio/mp3">
+
+    </audio></center>
+
+</body>
+</html>
